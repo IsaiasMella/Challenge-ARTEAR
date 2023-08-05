@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useFetch from "./Hooks/useFetch";
 
 const URL = "http://localhost:3001/zodiac_signs";
@@ -9,13 +8,13 @@ const HEADER = {
 };
 
 function App() {
-  const { data, isLoading } = useFetch(URL, HEADER);
+  const { data } = useFetch(URL, HEADER);
 
   console.log(data);
 
   return (
     <>
-      <h1>ARRANCAMOS!</h1>
+      <h1 className="text-pink-400 inline-block mb-6">Horóscopo</h1>
     </>
   );
 }
