@@ -13,6 +13,7 @@ module.exports = {
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': 'off',
-    'react/prop-types':'off'
+    'react/prop-types':'off',
+    'react/no-unknown-property':'off'
   },
 }
