@@ -1,16 +1,26 @@
+import { cloneElement } from "react";
+
 const listView = {
   grid: "grid grid-cols-2 place-items-center",
   list: "flex flex-col justify-center align-middle",
 };
 
-export const SignsList = ({ children, orderList }) => {
+export const SignsList = ({ children, orderList, sortedSigns }) => {
   return (
     <div
-      className={`${
-        orderList === "grid" ? listView.grid : listView.list
-      } mt-8 gap-4 w-full md:w-[90%] xl:w-[80%] `}
+      className={`${ orderList === "grid" ? listView.grid : listView.list } mt-8 gap-4 w-full md:w-[90%] xl:w-[80%] `}
     >
-      {children}
+      {sortedSigns &&
+        sortedSigns.map((signo) => {
+          if (sortedSigns[0]?.name === signo?.name) return;
+
+          return cloneElement(children, {
+            key: signo.id,
+            name: signo.name,
+            prediction: signo.prediction,
+            image: signo.image,
+          });
+        })}
     </div>
   );
 };

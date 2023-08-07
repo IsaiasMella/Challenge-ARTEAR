@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./index.css";
 
-export const SmallCard = ({ name, prediction, image}) => {
+const SmallCard = ({ name, prediction, image}) => {
   return (
     <Link to={`/sign/${name.toLowerCase()}`}>
       <div className="container group relative sm:grid sm:grid-rows-4 sm:grid-cols-3 sm:p-4 sm:place-items-center cursor-pointer items-start overflow-hidden rounded-lg border border-slate-100 shadow-sm transition-all duration-300 hover:shadow-xl h-40 w-40 sm:h-44 sm:w-[100%] gap-3 ">
@@ -19,3 +19,5 @@ export const SmallCard = ({ name, prediction, image}) => {
     </Link>
   );
 };
+
+export default SmallCard

@@ -1,2 +1,1 @@
-export * from './Home/Home'
-export * from './Sign/PageSign'
+export * from "./Home/Home";
