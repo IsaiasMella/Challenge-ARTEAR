@@ -1,7 +1,7 @@
 export const Search = ({ styles }) => {
   return (
     <svg
-      className={ styles }
+      className={ styles ? styles : '' }
       fill="none"
       height="24"
       stroke="currentColor"
