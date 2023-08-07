@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
 const useFetch = (url, headers) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   const getFetch = async (url, headers) => {
     fetch(url, headers )
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => setData(data))
       .catch((err) => console.error(err))
       .finally(() => setIsLoading(false));

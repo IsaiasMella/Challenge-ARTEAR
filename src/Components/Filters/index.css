@@ -1,0 +1,4 @@
+.viewOptions {
+    @apply bg-white border rounded p-2;
+    direction: rtl; /* Cambia la dirección del texto para mover la flecha a la izquierda */
+  }

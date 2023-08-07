@@ -1,7 +1,12 @@
-import { useEffect } from "react";
 import useFetch from "./Hooks/useFetch";
 
-const URL = "http://localhost:3001/zodiac_signs";
+import { PrincipalCard, SmallCard } from "./Components/Cards";
+import { Filters } from "./Components/Filters/Filters";
+import { SignsList } from "./Containers/SignsList/SignsList";
+import { sortSign } from "./Utils";
+import { useMemo, useState } from "react";
+
+const BASE_URL = "http://localhost:3001/zodiac_signs";
 const HEADER = {
   headers: {
     Authorization: "qazwsx",
@@ -9,13 +14,45 @@ const HEADER = {
 };
 
 function App() {
-  const { data, isLoading } = useFetch(URL, HEADER);
+  const { data } = useFetch(BASE_URL, HEADER);
+  const [filterSigns, setfilterSigns] = useState();
+  const [orderList, setOrderList] = useState("grid")
 
-  console.log(data);
+  const filteredSigns = useMemo(() => {
+    return filterSigns != null && filterSigns.length > 0
+      ? data.filter((sign) =>
+          sign?.name.toLowerCase().includes(filterSigns.toLowerCase().trim())
+        )
+      : data;
+  }, [data, filterSigns]);
+
+  const sortedSigns = useMemo(() => sortSign(filteredSigns), [filteredSigns]);
 
   return (
     <>
-      <h1>ARRANCAMOS!</h1>
+      <h1 className="text-pink-400 inline-block mb-16">Horóscopo</h1>
+      <Filters setfilterSigns={setfilterSigns} setOrderList={setOrderList} />
+      {sortedSigns && (
+        <PrincipalCard
+          name={sortedSigns[0]?.name}
+          prediction={sortedSigns[0]?.prediction}
+          image={sortedSigns[0]?.image}
+        />
+      )}
+      <SignsList orderList={orderList}>
+        {sortedSigns &&
+          sortedSigns.map((signo) => {
+            if (sortedSigns[0]?.name === signo?.name) return;
+            return (
+              <SmallCard
+                key={signo.id}
+                name={signo.name}
+                prediction={signo.prediction}
+                image={signo.image}
+              />
+            );
+          })}
+      </SignsList>
     </>
   );
 }
