@@ -3,16 +3,22 @@
 @tailwind utilities;
 @layer base {
   body {
-    font-family: 'Inter var', sans-serif;
-  }  
+    font-family: "Inter var", sans-serif;
+  }
   h1 {
-    @apply text-5xl font-normal tracking-wide;
+    @apply text-5xl font-normal tracking-wide ;
   }
   h2 {
-    @apply text-4xl tracking-wide;
+    @apply text-4xl tracking-wide dark:text-primary;
   }
   h3 {
-    @apply text-2xl tracking-wide;
+    @apply text-2xl tracking-wide dark:text-primary;
+  }
+  p{
+    @apply dark:text-secondary;
+  }
+  input, select{
+    @apply dark:text-primary;
   }
   a {
     @apply no-underline;
@@ -24,7 +30,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light;
   color: CanvasText;
   background-color: Canvas;
 
@@ -34,3 +39,4 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+

@@ -4,9 +4,15 @@ import useFetch from "../../Hooks/useFetch";
 import { sortSign } from "../../Utils";
 
 import { HomePresentation } from "./HomePresentation";
+import { SignNotFound } from "../../Components/SignNotFound/SignNotFound";
 
 const BASE_URL = "http://localhost:3001/zodiac_signs";
-const HEADER = { headers: { Authorization: "qazwsx" } };
+const HEADER = {
+  headers: {
+    Authorization: "qazwsx",
+    "Content-Encoding": "gzip",
+  },
+};
 
 export const Home = () => {
   const [filterSigns, setfilterSigns] = useState();
@@ -24,12 +30,14 @@ export const Home = () => {
 
   const sortedSigns = useMemo(() => sortSign(filteredSigns), [filteredSigns]);
 
-  return (
+  return sortedSigns ? (
     <HomePresentation
       sortedSigns={sortedSigns}
       setfilterSigns={setfilterSigns}
       setOrderList={setOrderList}
       orderList={orderList}
     />
+  ) : (
+    <SignNotFound />
   );
 };

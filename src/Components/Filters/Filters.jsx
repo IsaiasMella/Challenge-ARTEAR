@@ -10,12 +10,12 @@ export const Filters = ({ setfilterSigns, setOrderList }) => {
           onChange={(e) => {
             setOrderList(e.target.value);
           }}
-          className="viewOptions focus:outline-none border-0 border-b-2 rounded-none border-pink-400 focus:border-purple-400 transition px-4 py-2 ml-4 mb-1"
+          className="viewOptions focus:outline-none border-pink-400 border-0 border-b-2 rounded-none focus:border-purple-400 px-4 py-2 ml-4 mb-1 dark:bg-transparent dark:border-purple-400 dark:focus:border-pink-400"
         >
-          <option className="focus:border-none " value="grid">
+          <option className="rounded-none dark:bg-gray-700 " value="grid">
             Grilla
           </option>
-          <option className="focus:border-none " value="list">
+          <option className="rounded-none dark:bg-gray-700 " value="list">
             Lista
           </option>
         </select>
@@ -25,7 +25,8 @@ export const Filters = ({ setfilterSigns, setOrderList }) => {
         <input
           onChange={(e) => setfilterSigns(e.target.value)}
           type="text"
-          className="focus:outline-none border-0 border-b-2 rounded-none border-pink-400 focus:border-purple-400 transition px-2 py-1 ml-4 mb-1"
+          aria-label="Search Sign"
+          className="focus:outline-none border-0 border-b-2 rounded-none border-pink-400 focus:border-purple-400 transition px-2 py-1 ml-4 mb-1 dark:bg-transparent dark:border-purple-400 dark:focus:border-pink-400"
         />
       </div>
     </header>
