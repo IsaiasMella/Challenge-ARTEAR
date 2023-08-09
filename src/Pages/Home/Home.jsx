@@ -1,26 +1,20 @@
 import { useMemo, useState } from "react";
 
 import useFetch from "../../Hooks/useFetch";
-import { sortSign } from "../../Utils";
+import { BASE_URL, HEADER, sortSign } from "../../Utils";
 
 import { HomePresentation } from "./HomePresentation";
-import { SignNotFound } from "../../Components/SignNotFound/SignNotFound";
-
-const BASE_URL = "http://localhost:3001/zodiac_signs";
-const HEADER = {
-  headers: {
-    Authorization: "qazwsx",
-    "Content-Encoding": "gzip",
-  },
-};
+import { ErrorPage } from "../../Components/Errors/ErrorPage/ErrorPage";
 
 export const Home = () => {
   const [filterSigns, setfilterSigns] = useState();
   const [orderList, setOrderList] = useState("grid");
 
-  const { data } = useFetch(BASE_URL, HEADER);
+  const { data, error, isLoading } = useFetch(BASE_URL, HEADER);
 
   const filteredSigns = useMemo(() => {
+    if (!Array.isArray(data) || data.length === 0) return [];
+
     return filterSigns != null && filterSigns.length > 0
       ? data.filter((sign) =>
           sign?.name.toLowerCase().includes(filterSigns.toLowerCase().trim())
@@ -28,16 +22,26 @@ export const Home = () => {
       : data;
   }, [data, filterSigns]);
 
-  const sortedSigns = useMemo(() => sortSign(filteredSigns), [filteredSigns]);
+  const sortedSigns = useMemo(
+    () => (filteredSigns ? sortSign(filteredSigns) : null),
+    [filteredSigns]
+  );
 
-  return sortedSigns ? (
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <ErrorPage />;
+  }
+
+  return (
     <HomePresentation
       sortedSigns={sortedSigns}
       setfilterSigns={setfilterSigns}
       setOrderList={setOrderList}
       orderList={orderList}
+      error={error}
     />
-  ) : (
-    <SignNotFound />
   );
 };

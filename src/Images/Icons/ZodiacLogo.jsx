@@ -1,4 +1,9 @@
-export const ZodiacLogo = ({ darkMode }) => {
+import { useContext } from "react";
+import { DarkModeContext } from "../../Context/DarkModeContext";
+
+export const ZodiacLogo = () => {
+  const { darkMode } = useContext(DarkModeContext);
+
   return (
     <svg
       className={darkMode ? "stroke-gray-200" : "stroke-gray-900"}

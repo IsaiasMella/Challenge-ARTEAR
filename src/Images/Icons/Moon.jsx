@@ -1,4 +1,9 @@
-export const Moon = ({ darkMode }) => {
+import { useContext } from "react";
+import { DarkModeContext } from "../../Context/DarkModeContext";
+
+export const Moon = () => {
+  const { darkMode } = useContext(DarkModeContext);
+  
   return (
     <svg
       className={darkMode ? "fill-blue-800" : "fill-gray-200"}

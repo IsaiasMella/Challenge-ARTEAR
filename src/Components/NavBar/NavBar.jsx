@@ -5,16 +5,18 @@ import { Sun } from "../../Images/Icons/Sun";
 import { ZodiacLogo } from "../../Images/Icons/ZodiacLogo";
 import { ToggleSwitch } from "../ToggleSwitch/ToggleSwitch";
 
-export const NavBar = ({ isChecked, darkMode }) => {
+export const NavBar = () => {
   return (
-    <div className="flex justify-between p-4 w-[80%] mx-auto">
-      <Link to={"/"} aria-label='redirects to home'>
-        <ZodiacLogo darkMode={darkMode} />
-      </Link>
-      <div className="flex items-center justify-center">
-        <Sun darkMode={darkMode} />
-        <ToggleSwitch isChecked={isChecked} />
-        <Moon darkMode={darkMode} />
+    <div className="flex justify-center w-full mx-auto absolute top-0 left-0">
+      <div className="flex justify-between py-2 sm:p-4 w-[80%]">
+        <Link to={"/"} aria-label="redirects to home">
+          <ZodiacLogo />
+        </Link>
+        <div className="flex items-center justify-center">
+          <Sun />
+          <ToggleSwitch />
+          <Moon />
+        </div>
       </div>
     </div>
   );
