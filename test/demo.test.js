@@ -1,3 +1,6 @@
-test('nueva prueba',()=>{
-    
-})
+
+describe('haciendo testing', () => { 
+    test('should ', () => {
+        
+    });
+ })
