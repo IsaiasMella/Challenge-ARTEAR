@@ -1,8 +1,35 @@
-# React + Vite
+# Artear Challenge Horóscopo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto de evaluación de un horóscopo donde podes te muestra todos los signos y detalles, y poder hacer distintas funcionalidades_
 
-Currently, two official plugins are available:
+### Instalación 🔧
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+_Dependencias_
+
+```
+npm i 
+```
+
+# Ejecutamos el proyecto
+
+Servidor\
+_Este correra en el puerto 3001_
+```
+npm start
+```
+
+Cliente\
+_Este correra en el puerto 5173_
+```
+npm run dev
+```
+
+## Api
+
+http://localhost:3001/zodiac_signs
+
+## Construido con 🛠️
+
+* [React.js](https://create-react-app.dev/docs/getting-started)
+* [Tailwind CSS](https://tailwindcss.com/) - Framework CSS
+* [Vite](https://vitejs.dev/) - Compilador
