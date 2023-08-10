@@ -1,13 +1,13 @@
-import { SignNotFound } from "../../Components/Errors";
 import { Filters } from "../../Components/Filters/Filters";
+import { SignNotFound } from "../../Components/Errors";
 import { ContainerSingList } from "./ContainerSingList/ContainerSingList";
 
 export const HomePresentation = ({
-  sortedSigns,
-  setfilterSigns,
-  setOrderList,
-  orderList,
   error,
+  orderList,
+  sortedSigns,
+  setOrderList,
+  setfilterSigns,
 }) => {
   return (
     <div className="pt-[70px] sm:pt-[90px] mb-10 h-full w-full flex flex-col justify-center items-center text-center">

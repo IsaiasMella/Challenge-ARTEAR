@@ -1,12 +1,14 @@
 import { useMemo, useState } from "react";
 
-import useFetch from "../../Hooks/useFetch";
-import { BASE_URL, HEADER, sortSign } from "../../Utils";
+import { BASE_URL, HEADER } from "../../Utils";
+import { filterData, sortSign } from "../../helpers";
 
-import { HomePresentation } from "./HomePresentation";
-import { ErrorPage } from "../../Components/Errors/ErrorPage/ErrorPage";
+import useFetch from "../../Hooks/useFetch";
+
 import { Loader } from "../../Components/Loader/Loader";
-import { filterData } from "../../Utils/filterData";
+import { ErrorPage } from "../../Components/Errors/ErrorPage/ErrorPage";
+import { HomePresentation } from "./HomePresentation";
+
 
 export const Home = () => {
   const [filterSigns, setfilterSigns] = useState();
