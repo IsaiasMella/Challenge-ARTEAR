@@ -14,6 +14,10 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'off',
     'react/prop-types':'off',
-    'react/no-unknown-property':'off'
+    'react/no-unknown-property':'off',
+    
+  },
+  env: {
+    jest: true,
   },
 }
