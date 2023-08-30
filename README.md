@@ -28,7 +28,7 @@ npm start
 ```
 
 Cliente\
-_Este correra en el puerto 5174_
+_Este correra en el puerto 5173_
 ```
 npm run dev
 ```
