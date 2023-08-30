@@ -6,7 +6,7 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node ./src/data/server.js",
+    "start": "node ./data/server.js",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
