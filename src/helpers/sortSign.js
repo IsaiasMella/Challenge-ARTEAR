@@ -29,9 +29,7 @@ export const sortSign = (data) => {
   signs.upcomingSigns.toSorted(compareDates);
   signs.pastSigns.toSorted(compareDates);
 
-  if (signs.currentSign)
-    return [signs.currentSign, ...signs.upcomingSigns, ...signs.pastSigns];
-  return [...signs.upcomingSigns, ...signs.pastSigns];
+  return [signs.currentSign, ...signs.upcomingSigns, ...signs.pastSigns];
 };
 
 const compareDates = (a, b) => {
