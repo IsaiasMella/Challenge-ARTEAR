@@ -9,7 +9,7 @@ _3 - Los signos que ya pasaron en orden de año calendario._
 ## ***Notas:***
 * El proyecto cuenta con Light y Dark mode.
 * Se cambió el formato de las imágenes de PNG a WEBP para reducir su peso sin perder calidad, esto disminuye el tiempo de carga de las mismas.
-* Se migró la Base de Datos para generar un Monorepository con el fin de que sea más fácil su mantenimiento, ya que es un proyecto chico.
+* Se migró la Base de Datos para generar un Monorepo con el fin de que sea más fácil su mantenimiento, ya que es un proyecto chico.
 
 ### Instalación 🔧
 
