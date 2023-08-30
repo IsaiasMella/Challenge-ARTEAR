@@ -1,8 +1,44 @@
-# React + Vite
+# Artear Challenge Horóscopo
+### Descripción
+Proyecto de evaluación sobre un horóscopo donde muestra todos los signos y sus predicciones. Estos signos se encuentran ordenados por año calendario, siendo el orden el siguiente:\
+\
+_1 - El signo en transcurso (este se ubicará en la **PrincipalCard**)._\
+_2 - Los signos que restan hasta finalizar el año (sin incluir el signo en transcurso)._\
+_3 - Los signos que ya pasaron en orden de año calendario._
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ***Notas:***
+* El proyecto cuenta con Light y Dark mode.
+* Se cambió el formato de las imágenes de PNG a WEBP para reducir su peso sin perder calidad, esto disminuye el tiempo de carga de las mismas.
+* Se migró la Base de Datos para generar un Monorepo con el fin de que sea más fácil su mantenimiento, ya que es un proyecto chico.
 
-Currently, two official plugins are available:
+### Instalación 🔧
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+_Dependencias_
+
+```
+npm i 
+```
+
+# Ejecutamos el proyecto
+
+Servidor\
+_Este correra en el puerto 3001_
+```
+npm start
+```
+
+Cliente\
+_Este correra en el puerto 5173_
+```
+npm run dev
+```
+
+## Api
+
+http://localhost:3001/zodiac_signs
+
+## Construido con 🛠️
+
+* [React.js](https://create-react-app.dev/docs/getting-started)
+* [Tailwind CSS](https://tailwindcss.com/) - Framework CSS
+* [Vite](https://vitejs.dev/) - Compilador
