@@ -2,7 +2,7 @@ import jsonServer from "json-server";
 import { isAuthorized } from "./isAuthorized.js";
 
 const server = jsonServer.create();
-const router = jsonServer.router("./src/data/db.json");
+const router = jsonServer.router("./data/db.json");
 const middlewares = jsonServer.defaults({ readOnly: true, static: "./public" });
 const PORT = 3001;
 
