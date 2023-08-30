@@ -1,6 +1,15 @@
 # Artear Challenge Horóscopo
+### Descripción
+Proyecto de evaluación sobre un horóscopo donde muestra todos los signos y sus predicciones. Estos signos se encuentran ordenados por año calendario, siendo el orden el siguiente:\
+\
+_1 - El signo en transcurso (este se ubicará en la **PrincipalCard**)._\
+_2 - Los signos que restan hasta finalizar el año (sin incluir el signo en transcurso)._\
+_3 - Los signos que ya pasaron en orden de año calendario._
 
-Proyecto de evaluación de un horóscopo donde podes te muestra todos los signos y detalles, y poder hacer distintas funcionalidades_
+## ***Notas:***
+* El proyecto cuenta con Light y Dark mode.
+* Se cambió el formato de las imágenes de PNG a WEBP para reducir su peso sin perder calidad, esto disminuye el tiempo de carga de las mismas.
+* Se migró la Base de Datos para generar un Monorepository con el fin de que sea más fácil su mantenimiento, ya que es un proyecto chico.
 
 ### Instalación 🔧
 
