@@ -11,6 +11,15 @@ _3 - Los signos que ya pasaron en orden de año calendario._
 * Se cambió el formato de las imágenes de PNG a WEBP para reducir su peso sin perder calidad, esto disminuye el tiempo de carga de las mismas.
 * Se migró la Base de Datos para generar un Monorepo con el fin de que sea más fácil su mantenimiento, ya que es un proyecto chico.
 
+### Patrones de diseño utilizados
+* Stateful / Stateless
+* Componentización
+* Context API
+* Hooks
+* Compound Components
+* Controlled Components
+* Lifting State Up
+
 ### Instalación 🔧
 
 _Dependencias_
@@ -32,10 +41,6 @@ _Este correra en el puerto 5173_
 ```
 npm run dev
 ```
-
-## Api
-
-http://localhost:3001/zodiac_signs
 
 ## Construido con 🛠️
 
